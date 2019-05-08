@@ -59,13 +59,13 @@ export const handleLeadsStorage = (changeEvent) => {
       .then((response) => {
         let x = response.length;
         for (let i = 0; i < x ; i++) {
-          ecg[i] = ecg[i].slice(13);
-          if (ecg[i].charAt(0) === 'A' ) {
-            ekg.push({
-              I: ecg[i].slice(1)
-            })
-          } else {
+          if (i%10 === 0){
             switch (ecg[i].charAt(1)) {
+              case 'A':
+                  ekg.push({
+                    I: ecg[i].slice(2)
+                  })
+                  break;
               case 'B':
                   ekg.push({
                     II: ecg[i].slice(2)

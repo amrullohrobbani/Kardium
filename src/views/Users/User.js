@@ -42,7 +42,7 @@ constructor(props){
     }
     this.state.timerId = setTimeout(() => {
       this.setState({ startIndex: pos.startIndex, endIndex: pos.endIndex })
-    }, 500)
+    }, 100000)
   }
 
 
@@ -113,14 +113,14 @@ constructor(props){
             <CardBody>
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
               <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
                 <LineChart data={this.props.leads}              >
-
+                  <YAxis domain={['dataMin', 'dataMax']} />
                   <Line type="monotone" dataKey="I" dot={false} />
                 </LineChart>
               </Brush>
@@ -129,7 +129,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']}/>
@@ -137,6 +137,7 @@ constructor(props){
               <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
                 <LineChart data={this.props.leads}              >
                   <Line type="monotone" dataKey="II" dot={false} />
+                  <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
               </Brush>
               <Line type="monotone" dataKey="II" stroke="#8884d8" dot={false} />
@@ -144,7 +145,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -159,7 +160,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -167,6 +168,7 @@ constructor(props){
               <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
                 <LineChart data={this.props.leads}              >
                   <Line type="monotone" dataKey="aVF" dot={false} />
+                  <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
               </Brush>
               <Line type="monotone" dataKey="aVF" stroke="#8884d8" dot={false} />
@@ -174,7 +176,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -182,6 +184,7 @@ constructor(props){
               <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
                 <LineChart data={this.props.leads}              >
                   <Line type="monotone" dataKey="aVL" dot={false} />
+                  <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
               </Brush>
               <Line type="monotone" dataKey="aVL" stroke="#8884d8" dot={false} />
@@ -189,7 +192,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis  domain={['dataMin', 'dataMax']} />
@@ -197,6 +200,7 @@ constructor(props){
               <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
                 <LineChart data={this.props.leads}              >
                   <Line type="monotone" dataKey="aVR" dot={false} />
+                  <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
               </Brush>
               <Line type="monotone" dataKey="aVR" stroke="#8884d8" dot={false} />
@@ -204,7 +208,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -220,7 +224,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -236,7 +240,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -252,7 +256,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -268,7 +272,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
@@ -284,7 +288,7 @@ constructor(props){
 
             <LineChart width={1000} height={250} data={this.props.leads}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
+
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
