@@ -83,48 +83,25 @@ class DefaultAside extends Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <ListGroup className="list-group-accent" tag={'div'}>
-              <ListGroupItem className="list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Today</ListGroupItem>
+              <ListGroupItem className="list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Cara Menggunakan</ListGroupItem>
               <ListGroupItem action tag="a" href="#" className="list-group-item-accent-warning list-group-item-divider">
                 <div className="avatar float-right">
                   <img className="img-avatar" src="assets/img/avatars/7.jpg" alt="admin@bootstrapmaster.com"></img>
                 </div>
-                <div>Meeting with <strong>Lucas</strong> </div>
+                <div>- Website Procedure</div>
+                <div>1. Register</div>
+                <div>2. Logout</div>
+                <div>3. Sign In</div>
+                <div>4. Buka Patient List</div>
+                <div>5. Buka salah satu file yang ada di waktu penggunaan</div>
+                <div>6. Coba cek Pinned Status</div>
+                <div>7. Sign Out</div>
                 <small className="text-muted mr-3">
-                  <i className="icon-calendar"></i>&nbsp; 1 - 3pm
+                  <i className="icon-calendar"></i>right now
                 </small>
                 <small className="text-muted">
-                  <i className="icon-location-pin"></i> Palo Alto, CA
+                  <i className="icon-location-pin"></i> Kardium.id
                 </small>
-              </ListGroupItem>
-              <ListGroupItem className="list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Tomorrow</ListGroupItem>
-
-              <ListGroupItem action tag="a" href="#" className="list-group-item-accent-primary list-group-item-divider">
-                <div><strong>Team meeting</strong></div>
-                <small className="text-muted mr-3"><i className="icon-calendar"></i>&nbsp; 4 - 6pm</small>
-                <small className="text-muted"><i className="icon-home"></i>&nbsp; creativeLabs HQ</small>
-                <div className="avatars-stack mt-2">
-                  <div className="avatar avatar-xs">
-                    <img src={'assets/img/avatars/2.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                  </div>
-                  <div className="avatar avatar-xs">
-                    <img src={'assets/img/avatars/3.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                  </div>
-                  <div className="avatar avatar-xs">
-                    <img src={'assets/img/avatars/4.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                  </div>
-                  <div className="avatar avatar-xs">
-                    <img src={'assets/img/avatars/5.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                  </div>
-                  <div className="avatar avatar-xs">
-                    <img src={'assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                  </div>
-                  <div className="avatar avatar-xs">
-                    <img src={'assets/img/avatars/7.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                  </div>
-                  <div className="avatar avatar-xs">
-                    <img src={'assets/img/avatars/8.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                  </div>
-                </div>
               </ListGroupItem>
             </ListGroup>
           </TabPane>
