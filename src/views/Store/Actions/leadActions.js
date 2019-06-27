@@ -44,7 +44,18 @@ export const handleLeadsStorage = (changeEvent) => {
     const firebase = getFirebase();
 
     let link = changeEvent + ".txt"
-    let ekg = []
+    let leadI = []
+    let leadII = []
+    let leadIII = []
+    let leadaVF = []
+    let leadaVL = []
+    let leadaVR = []
+    let leadV1 = []
+    let leadV2 = []
+    let leadV3 = []
+    let leadV4 = []
+    let leadV5 = []
+    let leadV6 = []
     let data = ''
     let ecg = []
     let ref = firebase.storage()
@@ -59,74 +70,78 @@ export const handleLeadsStorage = (changeEvent) => {
       .then((response) => {
         let x = response.length;
         for (let i = 0; i < x ; i++) {
-          if (i%10 === 0){
+          if (i%11 === 0){
             switch (ecg[i].charAt(1)) {
               case 'A':
-                  ekg.push({
+                  leadI.push({
                     I: ecg[i].slice(2)
                   })
                   break;
               case 'B':
-                  ekg.push({
+                  leadII.push({
                     II: ecg[i].slice(2)
                   })
                   break;
               case 'C':
-                  ekg.push({
+                  leadIII.push({
                     III: ecg[i].slice(2)
                   })
                   break;
               case 'D':
-                  ekg.push({
+                  leadaVL.push({
                     aVL: ecg[i].slice(2)
                   })
                   break;
               case 'E':
-                  ekg.push({
+                  leadaVR.push({
                     aVR: ecg[i].slice(2)
                     })
                     break;
               case 'F':
-                  ekg.push({
+                  leadaVF.push({
                     aVF: ecg[i].slice(2)
                     })
                     break;
               case 'G':
-                  ekg.push({
+                  leadV1.push({
                     V1: ecg[i].slice(2)
                     })
                     break;
               case 'H':
-                  ekg.push({
+                  leadV2.push({
                     V2: ecg[i].slice(2)
                     })
                     break;
               case 'I':
-                  ekg.push({
+                  leadV3.push({
                     V3: ecg[i].slice(2)
                     })
                     break;
               case 'J':
-                    ekg.push({
+                    leadV4.push({
                     V4: ecg[i].slice(2)
                     })
                     break;
               case 'K':
-                  ekg.push({
+                  leadV5.push({
                     V5: ecg[i].slice(2)
                     })
                     break;
               case 'L':
-                  ekg.push({
+                  leadV6.push({
                     V6: ecg[i].slice(2)
                     })
                     break;
+              default:
+                  leadI.push({
+                    I: ecg[i].slice(1)
+                  })
             }
           }
         }
       })
       .then((response) => {
-      dispatch({ type : 'HANDLELEADSTORAGE_SUCCESS', ekg})
+      dispatch({ type : 'HANDLELEADSTORAGE_SUCCESS', leadI, leadII, leadIII, leadaVF, leadaVL, leadaVR, leadV1, leadV2, leadV3, leadV4, leadV5, leadV6})
     }).catch((err) => {
       dispatch({ type : 'HANDLELEAD_FAILED', err })
     })

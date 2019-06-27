@@ -51,7 +51,6 @@ constructor(props){
       if (!patient) return <Suspense fallback={<div>Loading...</div>}></Suspense>
       const user = patient.find( user => user.id.toString() === this.props.match.params.id)
 
-
     return (
       <div className="animated fadeIn">
         <Row>
@@ -111,15 +110,15 @@ constructor(props){
                 <strong><i className="icon-info pr-1"></i> ECG Result</strong>
             </CardHeader>
             <CardBody>
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadI}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
               <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+                <LineChart data={this.props.leadI}              >
                   <YAxis domain={['dataMin', 'dataMax']} />
                   <Line type="monotone" dataKey="I" dot={false} />
                 </LineChart>
@@ -127,15 +126,15 @@ constructor(props){
               <Line type="monotone" dataKey="I" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadII}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']}/>
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='II' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadII}              >
                   <Line type="monotone" dataKey="II" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -143,30 +142,30 @@ constructor(props){
               <Line type="monotone" dataKey="II" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadIII}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='III' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadIII}              >
                   <Line type="monotone" dataKey="III" dot={false} />
                 </LineChart>
               </Brush>
               <Line type="monotone" dataKey="III" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadaVF}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='aVF' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadaVF}              >
                   <Line type="monotone" dataKey="aVF" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -174,15 +173,15 @@ constructor(props){
               <Line type="monotone" dataKey="aVF" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadaVL}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='aVL' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadaVL}              >
                   <Line type="monotone" dataKey="aVL" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -190,15 +189,15 @@ constructor(props){
               <Line type="monotone" dataKey="aVL" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadaVR}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis  domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='aVR' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadaVR}              >
                   <Line type="monotone" dataKey="aVR" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -206,15 +205,15 @@ constructor(props){
               <Line type="monotone" dataKey="aVR" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadV1}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='V1' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadV1}              >
                   <Line type="monotone" dataKey="V1" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -222,15 +221,15 @@ constructor(props){
               <Line type="monotone" dataKey="V1" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadV2}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/><CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='V2' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadV2}              >
                   <Line type="monotone" dataKey="V2" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -238,15 +237,15 @@ constructor(props){
               <Line type="monotone" dataKey="V2" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadV3}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='V3' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadV3}              >
                   <Line type="monotone" dataKey="V3" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -254,15 +253,15 @@ constructor(props){
               <Line type="monotone" dataKey="V3" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadV4}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='V4' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadV4}              >
                 <YAxis domain={['dataMin', 'dataMax']} />
                   <Line type="monotone" dataKey="V4" dot={false} />
                 </LineChart>
@@ -270,15 +269,15 @@ constructor(props){
               <Line type="monotone" dataKey="V4" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadV5}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='V5' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadV5}              >
                   <Line type="monotone" dataKey="V5" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
@@ -286,21 +285,22 @@ constructor(props){
               <Line type="monotone" dataKey="V5" stroke="#8884d8" dot={false} />
             </LineChart>
 
-            <LineChart width={1000} height={250} data={this.props.leads}
+            <LineChart width={1000} height={250} data={this.props.leadV6}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-
+              <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="Time" />
               <Tooltip />
               <YAxis domain={['dataMin', 'dataMax']} />
               <Legend />
-              <Brush dataKey='I' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
-                <LineChart data={this.props.leads}              >
+              <Brush dataKey='V6' height={30} stroke="#8884d8" onChange={(e) => this.updateBrush(e)} startIndex={this.state.startIndex} endIndex={this.state.endIndex} tick={true}>
+                <LineChart data={this.props.leadV6}              >
                   <Line type="monotone" dataKey="V6" dot={false} />
                   <YAxis domain={['dataMin', 'dataMax']} />
                 </LineChart>
               </Brush>
-              <Line type="monotone" dataKey="V6" stroke="#8884d8" dot={false} isAnimationActive={true}/>
+              <Line type="monotone" dataKey="V6" stroke="#8884d8" dot={false} />
             </LineChart>
+
             </CardBody>
           </Card>
           </Col>
@@ -313,7 +313,18 @@ constructor(props){
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-    leads : state.lead.leads,
+    leadI:state.lead.leadI,
+    leadII:state.lead.leadII,
+    leadIII:state.lead.leadIII,
+    leadaVF:state.lead.leadaVF,
+    leadaVL:state.lead.leadaVL,
+    leadaVR:state.lead.leadaVR,
+    leadV1:state.lead.leadV1,
+    leadV2:state.lead.leadV2,
+    leadV3:state.lead.leadV3,
+    leadV4:state.lead.leadV4,
+    leadV5:state.lead.leadV5,
+    leadV6:state.lead.leadV6,
     patient : state.firestore.ordered.patients,
     profile : state.firebase.profile
   }
