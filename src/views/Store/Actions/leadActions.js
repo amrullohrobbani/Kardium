@@ -70,7 +70,7 @@ export const handleLeadsStorage = (changeEvent) => {
       .then((response) => {
         let x = response.length;
         for (let i = 0; i < x ; i++) {
-          if (i%11 === 0){
+          // if (i%11 === 0){
             switch (ecg[i].charAt(1)) {
               case 'A':
                   leadI.push({
@@ -137,7 +137,7 @@ export const handleLeadsStorage = (changeEvent) => {
                     I: ecg[i].slice(1)
                   })
             }
-          }
+          // }
         }
       })
       .then((response) => {
